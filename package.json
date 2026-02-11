@@ -1,0 +1,75 @@
+{
+  "name": "react-grab-bridge",
+  "displayName": "React Grab Bridge",
+  "description": "Exposes a localhost HTTP server so browser devtools can send React component selection stacks to VS Code for one-click navigation.",
+  "version": "0.1.0",
+  "publisher": "react-grab",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:reactGrab.startBridge",
+    "onCommand:reactGrab.stopBridge",
+    "onCommand:reactGrab.openRenderedBy",
+    "onCommand:reactGrab.openUsedIn",
+    "onCommand:reactGrab.openFrame",
+    "onCommand:reactGrab.showLastSelection"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reactGrab.startBridge",
+        "title": "React Grab: Start Bridge"
+      },
+      {
+        "command": "reactGrab.stopBridge",
+        "title": "React Grab: Stop Bridge"
+      },
+      {
+        "command": "reactGrab.openRenderedBy",
+        "title": "React Grab: Open Rendered By"
+      },
+      {
+        "command": "reactGrab.openUsedIn",
+        "title": "React Grab: Open Used In"
+      },
+      {
+        "command": "reactGrab.openFrame",
+        "title": "React Grab: Open Frame (QuickPick)"
+      },
+      {
+        "command": "reactGrab.showLastSelection",
+        "title": "React Grab: Show Last Selection"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "reactGrab.openRenderedBy",
+        "key": "cmd+enter",
+        "mac": "cmd+enter",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "reactGrab.openUsedIn",
+        "key": "cmd+shift+enter",
+        "mac": "cmd+shift+enter",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test:post": "node scripts/postSelection.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.0"
+  }
+}
