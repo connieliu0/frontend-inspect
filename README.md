@@ -2,6 +2,8 @@
 
 A VS Code extension that runs a localhost HTTP server so browser dev-tools (or any script) can send **React component selection stacks** and VS Code jumps straight to the right source file.
 
+https://github.com/user-attachments/assets/7ffbda7b-7c71-4d4d-a378-d7d6c23f61eb
+
 ---
 
 ## Features
