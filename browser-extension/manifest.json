@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "React Grab",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "storage"],
+  "action": {},
+  "options_ui": {
+    "page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["dist/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["dist/content-main.js"], "matches": ["http://localhost/*", "http://127.0.0.1/*"] }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

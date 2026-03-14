@@ -1,0 +1,15 @@
+{
+  "name": "frontend-inspect-extension",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild content.js --bundle --outfile=dist/content.js --format=iife --platform=browser && esbuild content-main.js --bundle --outfile=dist/content-main.js --format=iife --platform=browser",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "element-source": "^0.0.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
